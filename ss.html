@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		function validateregistration()
+		{
+			var name= document.myform.name.value;
+			var password=document.myform.password.value;
+			if( password==""||name=="" )
+			{
+				alert("enter full details");
+			}
+		
+
+			else if(password.length<6)
+			{
+				alert("Password must be atleast 6 characters long");
+				return false;
+			}
+			else{
+alert("registration successfull");
+return true;
+}
+		}
+		function validatelogin()
+{
+        var name=document.form.name.value;
+        var password=document.form.password.value;
+if( password==""||name=="" )
+{
+  alert("enter full details");
+}        
+
+ else if(password.length<6){
+          alert("password must contain atleast 6 characters");
+          return false;
+        }
+ else{
+    alert("login succesfull");
+        return true;
+      }
+}
+function validateuserprofile()
+    {
+    var name=document.profileform.name.value;
+      var email=document.profileform.email.value;
+    if( name==""||email=="" )
+    {
+      alert("enter full details");
+      return false;
+    }
+    
+    else
+    {
+        alert("profile updated successfully");
+        return true;
+    }
+    }  
+    function validatePayment() {
+  const creditCardNumber = document.creditform.creditCardNumber.value;
+
+  
+  if (creditCardNumber.length!=16) {
+    alert("Please provide a valid 16-digit credit card number.");
+    return false;
+  }
+  else{
+    alert("payment successfull");
+    return true;
+  }
+
+  
+}
+
+		</script>
+	<body>
+	  <h1>registration form</h1>
+		<form name="myform" method="post" onsubmit="return validateregistration()">
+		Name:<input type="text" name="name"><br/>
+		Password:<input type="password" name="password"><br/>
+		<input type="submit" value="register">
+		</form>
+		<h1>login form</h1>
+	<form  name="form" onsubmit="return validatelogin()">
+	 Name:<input type="text" name="name"></br>
+        password:<input type="password" name="password"></br>
+        <input type="submit" value="login"> 
+		</form>
+		<h1>user profile</h1>
+        <form  name="profileform" onsubmit="return validateuserprofile()">
+        UserName:<input type="text" name="name"><br/>
+        Email:<input type="email" name="email"><br/>
+        <input type="submit" value="updateprofile">
+        </form>
+        <h1>Payment Form</h1>
+<form  name="creditform" onsubmit="return validatePayment()">
+Credit Card Number:<input type="text" id="creditCardNumber" name="creditCardNumber" required>
+<br>
+<input type="submit" value="Make Payment">
+</form>
+	</body>
+</html>
